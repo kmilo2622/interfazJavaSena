@@ -19,8 +19,6 @@ public class Application {
 		
 		int operacion = in.nextInt();
 		
-		in.close();
-		
 		if (operacion == 1) {
 			
 			set.fillValues();

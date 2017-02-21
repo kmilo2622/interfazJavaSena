@@ -64,26 +64,21 @@ public class SetValues {
 		Cliente andres = new Cliente(1, identification, name, ammount, account_id, 
 				account_name, "ASDfh");
 
-		in.close();
-
-
 		System.out.println("Bienvenido " + andres.getName());
 		System.exit(1);
 
 	}
 
 	public void getValues() {
-
-		int numero;
 		int operacion;
 		int account_type;
 		int ammount_total = 500;
 		int ammount_total_inv = 10000;
 
-		Scanner in = new Scanner(System.in);
+		Scanner on = new Scanner(System.in);
 
 		System.out.println("Ingrese por favor su Número de usuario");
-		numero = in.nextInt();
+		int numero = on.nextInt();
 
 		if (numero != 1) {
 			System.out.println("Usted no se encuentra registrado");
@@ -91,12 +86,12 @@ public class SetValues {
 		}
 
 		System.out.println("Ingrese su operacion \n" + "1. Consignación" +"\n 2.Retiro");
-		operacion = in.nextInt();
+		operacion = on.nextInt();
 
 		if (operacion == 2) {
 
 			System.out.println("Ingrese su número de documento");
-			identification = in.nextLong();
+			identification = on.nextLong();
 
 			if (identification != 12345) {
 				System.out.println("Usted no puede realizar esta operación");
@@ -106,12 +101,12 @@ public class SetValues {
 			System.out.println("Hola Andrés ¿Cómo ha estado? \n");
 
 			System.out.println("Ingrese su tipo de cuenta: \n 1. Ahorros \n 2. Inversión");
-			account_type = in.nextInt();
+			account_type = on.nextInt();
 
 			if (account_type == 1) {
 
 				System.out.println("Ingrese la cantidad de dinero a retirar");
-				ammount = in.nextLong();
+				ammount = on.nextLong();
 
 				if (ammount - ammount_total <= 500) {
 					System.out.println("Desafortunadamente no tiene suficiente dinero para esta operacion");
@@ -124,12 +119,12 @@ public class SetValues {
 			} else if (account_type == 2) {
 				
 				System.out.println("Ingrese la cantidad de dinero a retirar");
-				ammount = in.nextLong();
+				ammount = on.nextLong();
 
 				if (ammount - ammount_total_inv <= 10000) {					
 					System.out.println("Desea cancelar su cuenta a causa de retirar todo el dinero" +
 							"\n 1. Si \n 2. No");
-					int decision = in.nextInt();
+					int decision = on.nextInt();
 					
 					if (decision == 1) {
 						System.out.println("Dinero retirado exitosamente \n " +
@@ -148,16 +143,31 @@ public class SetValues {
 				System.out.println("Debió seleccionar una operación válida. Hasta luego");
 				System.exit(1);
 			}
-			
-			in.close();
 		}
 	}
 	
 	public void getEmployed() {
 		
-		Scanner in = new Scanner(System.in);
+		Scanner ol = new Scanner(System.in);
 		
-		System.out.println("Ingrese por favor su Número de usuario");
+		System.out.println("Ingrese por favor su Cargo:\n" +
+				"1. Jefe \n" +
+				"2. Cajero \n" +
+				"3. Supervisor \n" +
+				"4. Recepcionista \n" +
+				"5. Otro");
+		
+		int charge = ol.nextInt();
+		
+		if (charge == 1 || charge == 2 || charge == 3 || charge == 4 || charge == 5) {
+			getValues();
+		} else {
+			
+			System.out.println("Su cargo no se encuentra entre los indicados");
+			System.out.println("\n" + charge);
+			System.exit(1);
+			
+		}
 		
 	}
 
