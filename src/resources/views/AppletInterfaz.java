@@ -1,14 +1,13 @@
 package resources.views;
 
 import java.awt.*;
+import java.applet.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-import javax.swing.JApplet;
-
 //<applet width="500" height="500" code="AppletInterfaz"></applet>
 
-public class AppletInterfaz extends JApplet {
+public class AppletInterfaz extends Applet {
 
 	/**
 	 * Hecho por Juan Camilo Arroyave Rico
@@ -49,19 +48,19 @@ public class AppletInterfaz extends JApplet {
 				switch (item) {
 
 				case "ROJO": 
-					getContentPane().setBackground(Color.RED);
+					setBackground(Color.RED);
 					break;
 
 				case "AZUL":
-					getContentPane().setBackground(Color.BLUE);
+					setBackground(Color.BLUE);
 					break;
 
 				case "AMARILLO":
-					getContentPane().setBackground(Color.YELLOW);
+					setBackground(Color.YELLOW);
 					break;
 
 				default:
-					getContentPane().setBackground(Color.WHITE);
+					setBackground(Color.WHITE);
 					break;
 				}
 			}
