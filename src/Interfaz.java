@@ -20,10 +20,12 @@ public class Interfaz {
 		
 		if (decision == 1) {
 			System.out.println("Ir a AppletInterfaz.java en el paquete resources/views\n"
-					+ "No hubo forma de abrirla desde aquí \n"
+					+ "No hubo forma de abrirla desde aquï¿½ \n"
 					+ "No quiero tener tantos proyectos diferentes");
 		} else if (decision == 2) {
 			System.out.println("Ir a AppletManejadores.java en el paquete resources/views");
+		} else if (decision == 3) {
+			System.out.println("Ir a AppletCalculadora.java en el paquete resources/views");
 		}
 
 	}

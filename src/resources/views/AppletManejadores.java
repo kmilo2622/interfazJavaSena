@@ -18,7 +18,7 @@ public class AppletManejadores extends Applet {
 	 * Para el Servicio Nacional de Aprendizaje Sena
 	 */
 
-	//Creamos desde aquí todos los elementos correspondientes. 
+	//Creamos desde aqui todos los elementos correspondientes. 
 
 	Label l1, l2, l3;
 	TextField e1, e2, e3;
@@ -32,7 +32,7 @@ public class AppletManejadores extends Applet {
 		setLayout(new GridLayout(5,3,10,10));
 		setSize(1400, 500);
 
-		//Luego de crear el Layout para el Applet, comenzamos a posicionar todos los 
+		//Luego de crear el Layout para el Applet, comenzamos a posicionar todos los
 		//elementos correspondientes
 
 		//Labels
