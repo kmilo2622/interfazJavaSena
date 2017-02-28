@@ -5,16 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//<applet width="500" height="500" code="AppletCalculadora"></applet>
-import java.awt.*;
-import java.applet.*;
-import java.awt.event.*;
- 
+//<applet width="500" height="500" code="AppletCalculadora"></applet> 
 public class AppletCalculadora extends Applet implements ActionListener{
     /**
-	 * 
+	 * Programa desarrollado
+	 * por Juan Camilo Arroyave Rico
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	// Se crean las variables globales
     Button b0, b00, b1, b2, b3, b4, b5, b6, b7, b8, b9, bp, bs, br, bm, bd, bi, bl, bc;
     TextField t1;
@@ -25,9 +23,7 @@ public class AppletCalculadora extends Applet implements ActionListener{
     private String calc;
  
     public AppletCalculadora(){
-        // Este es el constructor, aqui se crean la caja de texto,
-        // los botones, y se añade la funcion de escuchar por parte de
-        // los botones.
+
         setLayout(new GridLayout(1, 1, 0, 0));
         pgg = new Panel(new GridLayout(2, 1, 0, 0)); // Panel General
         pg1 = new Panel(new GridLayout(1, 1, 0, 0)); // Panel de caja de texto
@@ -107,94 +103,93 @@ public class AppletCalculadora extends Applet implements ActionListener{
         bc.addActionListener(this);
     }
  
-    public void actionPerformed(ActionEvent ae){
-        // Este es el metodo que hace las operaciones necesarias para
-        // que cada boton tenga su funcion.
-        if (ae.getSource() == b0){
+    public void actionPerformed(ActionEvent boton){
+
+        if (boton.getSource() == b0){
             calc = t1.getText();
             t1.setText(calc + "0");
         }
  
-        if (ae.getSource() == b00){
+        if (boton.getSource() == b00){
             calc = t1.getText();
             t1.setText(calc + "00");
         }
  
-        if (ae.getSource() == b1){
+        if (boton.getSource() == b1){
             calc = t1.getText();
             t1.setText(calc + "1");
         }
  
-        if (ae.getSource() == b2){
+        if (boton.getSource() == b2){
             calc = t1.getText();
             t1.setText(calc + "2");
         }
  
-        if (ae.getSource() == b3){
+        if (boton.getSource() == b3){
             calc = t1.getText();
             t1.setText(calc + "3");
         }
  
-        if (ae.getSource() == b4){
+        if (boton.getSource() == b4){
             calc = t1.getText();
             t1.setText(calc + "4");
         }
  
-        if (ae.getSource() == b5){
+        if (boton.getSource() == b5){
             calc = t1.getText();
             t1.setText(calc + "5");
         }
  
-        if (ae.getSource() == b6){
+        if (boton.getSource() == b6){
             calc = t1.getText();
             t1.setText(calc + "6");
         }
  
-        if (ae.getSource() == b7){
+        if (boton.getSource() == b7){
             calc = t1.getText();
             t1.setText(calc + "7");
         }
  
-        if (ae.getSource() == b8){
+        if (boton.getSource() == b8){
             calc = t1.getText();
             t1.setText(calc + "8");
         }
  
-        if (ae.getSource() == b9){
+        if (boton.getSource() == b9){
             calc = t1.getText();
             t1.setText(calc + "9");
         }
  
-        if (ae.getSource() == bp){
+        if (boton.getSource() == bp){
             calc = t1.getText();
             t1.setText(calc + ".");
         }
  
-        if (ae.getSource() == bs){
+        if (boton.getSource() == bs){
             funcSuma();
         }
  
-        if (ae.getSource() == br){
+        if (boton.getSource() == br){
             funcResta();
         }
  
-        if (ae.getSource() == bm){
+        if (boton.getSource() == bm){
             funcMult();
         }
  
-        if (ae.getSource() == bd){
+        if (boton.getSource() == bd){
             funcDiv();
         }
         
-        if (ae.getSource() == bi){
+        if (boton.getSource() == bi){
         	funcIgualdad();
         }
  
-        if (ae.getSource() == bc){
+        if (boton.getSource() == bc){
         	t1.setText(t1.getText().substring(0, t1.getText().length()-1));
         }
  
-        if (ae.getSource() == bl){
+        if (boton.getSource() == bl){
             resultado = 0.0;
             numero = 0.0;
             comp = "";
@@ -204,7 +199,7 @@ public class AppletCalculadora extends Applet implements ActionListener{
     }
  
     public void funcSuma(){
-        // Este metodo implementa la suma.
+
         if(t1.getText() == ""){
             t1.setText("0");
         }
@@ -229,7 +224,7 @@ public class AppletCalculadora extends Applet implements ActionListener{
     }
  
     public void funcResta(){
-        // Este metodo implementa la resta.
+
         numero = Double.parseDouble(t1.getText());
  
         if(comp == "+"){
@@ -250,7 +245,7 @@ public class AppletCalculadora extends Applet implements ActionListener{
     }
  
     public void funcMult(){
-        // Este metodo implementa la multiplicacion.
+    	
         if(t1.getText() == ""){
             t1.setText("1");
         }
@@ -279,7 +274,7 @@ public class AppletCalculadora extends Applet implements ActionListener{
     }
  
     public void funcDiv(){
-        // Este metodo implementa la division.
+
         numero = Double.parseDouble(t1.getText());
  
         if(comp == "+"){
@@ -304,7 +299,7 @@ public class AppletCalculadora extends Applet implements ActionListener{
     }
  
     public void funcIgualdad(){
-        // Este metodo implementa la igualdad.
+    	
         numero = Double.parseDouble(t1.getText());
  
         if(comp == "+"){
