@@ -10,7 +10,6 @@ public class Application {
 		Controller.incio();
 		
 		control = new Controller();
-		control.setLaptopValues1();
 	}
 
 }

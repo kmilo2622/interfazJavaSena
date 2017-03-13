@@ -25,70 +25,88 @@ public class Controller {
 		}
 	}
 
-	public void setLaptopValues1() {
+	public void setLaptopValues1(TextField t1, TextField t2, TextField t3, TextField t4, TextArea t5) {
 
-		String marca = "Lenovo";
-		String modelo = "ACH3";
-		double memoria = 512.3;
-		double precio = 120.02;
+		String marca = t1.getText().toString();
+		String modelo = t2.getText().toString();
+		double memoria = Double.parseDouble(t3.getText().toString());
+		double precio = Double.parseDouble(t4.getText().toString());
 
 		try {
+
 			Laptop laptop = new Laptop();
 			laptop.setMarca(marca);
 			laptop.setModelo(modelo);
 			laptop.setMemoria(memoria);
 			laptop.setPrecio(precio);
 
-			System.out.println(String.format("Tengo un nuevo computador de marca"
+			String output = String.format("Tengo un nuevo computador de marca "
+					+ "%s, \n es de modelo %s \n y tiene una memoria RAM de %s MB"
+					+ "\n finalmente me costó $ %s ", laptop.getMarca(), laptop.getModelo(),
+					laptop.getMemoria(), laptop.getPrecio());
+
+			/*System.out.println(String.format("Tengo un nuevo computador de marca"
 					+ "%s, \nes de modelo %s \ny tiene una memoria RAM de %s MB"
 					+ "\nfinalmente me costó $ %s ", laptop.getMarca(), laptop.getModelo(),
-					laptop.getMemoria(), laptop.getPrecio()));
+					laptop.getMemoria(), laptop.getPrecio()));*/
 
-			System.exit(1);
+			t5.setText(output);
+
+		} catch (Exception e) {
+			System.out.println("Hubo un problema con la ejecución del programa");
+		}
+	}
+
+	public void setLaptopValues2(TextField t1, TextField t2, TextField t3, TextField t4, TextArea t5) {
+
+		String marca = t1.getText().toString();
+		String modelo = t2.getText().toString();
+		int memoria = Integer.parseInt(t3.getText().toString());
+		double precio = Double.parseDouble(t4.getText().toString());
+
+		try {
+			
+			Laptop laptop = new Laptop(marca, modelo, memoria, precio);
+
+			String output = String.format("Tengo un nuevo computador de marca"
+					+ "%s, \n es de modelo %s \ny tiene una memoria RAM de %s MB"
+					+ "\n finalmente me costó $ %s", laptop.getMarca(), laptop.getModelo(),
+					laptop.getMemoria(), laptop.getPrecio());
+
+			/*System.out.println(String.format("Tengo un nuevo computador de marca"
+					+ "%s, \nes de modelo %s \ny tiene una memoria RAM de %s MB"
+					+ "\nfinalmente me costó $ %s", laptop.getMarca(), laptop.getModelo(),
+					laptop.getMemoria(), laptop.getPrecio()));*/
+
+			t5.setText(output);
 
 		} catch (Exception e) {
 			System.out.println("Hubo un problema con la ejecución del programa");
 		}
 	}
 
-	public void setLaptopValues2() {
+	public void setLaptopValues3(TextField t1, TextField t2, TextField t3, TextField t4, TextArea t5) {
 
-		String marca = "Lenovo";
-		String modelo = "ACH3";
-		int memoria = 512;
-		double precio = 120.02;
-
-		try {
-			Laptop laptop = new Laptop(marca, modelo, memoria, precio);
-
-			System.out.println(String.format("Tengo un nuevo computador de marca"
-					+ "%s, \nes de modelo %s \ny tiene una memoria RAM de %s MB"
-					+ "\nfinalmente me costó $ %s", laptop.getMarca(), laptop.getModelo(),
-					laptop.getMemoria(), laptop.getPrecio()));
-
-			System.exit(1);
-
-		} catch (Exception e) {
-			System.out.println("Hubo un problema con la ejecución del programa");
-		}
-	}
-	
-	public void setLaptopValues3() {
-
-		String marca = "Lenovo";
-		String modelo = "ACH3";
-		int memoria = 512;
-		int precio = 120;
+		String marca = t1.getText().toString();
+		String modelo = t2.getText().toString();
+		int memoria = Integer.parseInt(t3.getText().toString());
+		int precio = Integer.parseInt(t4.getText().toString());
 
 		try {
+			
 			Laptop laptop = new Laptop(marca, modelo, memoria, precio);
+			
+			String output = String.format("Tengo un nuevo computador de marca"
+					+ "%s, \nes de modelo %s \ny tiene una memoria RAM de %s MB"
+					+ "\nfinalmente me costó $ %s Contador %s", laptop.getMarca(), laptop.getModelo(),
+					laptop.getMemoria(), laptop.getPrecio());
 
-			System.out.println(String.format("Tengo un nuevo computador de marca"
+			/*System.out.println(String.format("Tengo un nuevo computador de marca"
 					+ "%s, \nes de modelo %s \ny tiene una memoria RAM de %s MB"
 					+ "\nfinalmente me costó $ %s", laptop.getMarca(), laptop.getModelo(),
-					laptop.getMemoria(), laptop.getPrecio()));
-
-			System.exit(1);
+					laptop.getMemoria(), laptop.getPrecio()));*/
+			
+			t5.setText(output);
 
 		} catch (Exception e) {
 			System.out.println("Hubo un problema con la ejecución del programa");
